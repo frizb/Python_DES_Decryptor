@@ -61,3 +61,27 @@ encrypt me please!
 Process finished with exit code 0
 
 ```
+
+# DESCrypto.py Help Info Output
+```
+C:\Python27\python.exe C:/Users/Null/PycharmProjects/BatchPatch/DESCrypto.py -h
+DESCrypto - C# .NET Decryptor - V1 - Last Updated: September 15th, 2018
+usage: DESCrypto.py [-h] [-decode DECODE] [-encode ENCODE] [-key KEY] [-iv IV]
+
+This came up in an engagement where a C# application contained a hard-coded key that was being used to store user credentials for remote access.  As a POC we reverse engineered the application to extract the key and IV used to store the passwords and created a simple Python script to decrypt these.
+
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -decode DECODE  Specify a cyphertext password stored in the BatchPath *.BPS
+                  file to decrypt using the BatchPath hardcoded key value.
+  -encode ENCODE  Specify a cleartext password to be encrypted using the
+                  BatchPatch hardcoded key value.
+  -key KEY        Specify a key to be used for the DEC Encryption (must have a
+                  length that is a multiple of 8). (default: s3cret12)
+  -iv IV          Specify initilization vector to be used for the DEC
+                  Encryption (must have a length that is a multiple of 8).
+                  (default: s3cret12)
+
+Process finished with exit code 0
+```
