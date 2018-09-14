@@ -25,7 +25,7 @@ def strip_pkcs7(text):
 
 
 print("DESCrypto - C# .NET Decryptor - V1 - Last Updated: September 15th, 2018")
-parser = argparse.ArgumentParser(description='Decrypts the default security encrypted passwords stored in BatchPatch *.BPS file. Passworrds are stored in the <columnPassword> XML element and can be easily decrpyed using an encryption key that is hardcoded into the BatchPatch binary.')
+parser = argparse.ArgumentParser(description='This came up in an engagement where a C# application contained a hard-coded key that was being used to store user credentials for remote access.  As a POC we reverse engineered the application to extract the key and IV used to store the passwords and created a simple Python script to decrypt these.')
 parser.add_argument("-decode", type=str, help='Specify a cyphertext password stored in the BatchPath *.BPS file to decrypt using the BatchPath hardcoded key value.')
 parser.add_argument("-encode", type=str, help='Specify a cleartext password to be encrypted using the BatchPatch hardcoded key value. ')
 parser.add_argument("-key", default="s3cret12",  type=str, help='Specify a key to be used for the DEC Encryption (must have a length that is a multiple of 8). (default: %(default)s)')
