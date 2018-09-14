@@ -44,6 +44,20 @@ namespace DESCrypto
 
 ```
 
+Output of the C# code above:
+```console
+aJozabtltbMTtr8IlNW5xo4JDqCvtfb1
+Press any key to exit.
+```
+
 The Python Script DESCrypto.py is able to decrypt this C# DES encrypted string:
 
+```console
+$ python DESCrypto.py -decode 415Oo0QPYf7PwJjbfUxt3NxJ3jThu+ht
+DESCrypto - C# .NET Decryptor - V1 - Last Updated: September 15th, 2018
+Decoded: 415Oo0QPYf7PwJjbfUxt3NxJ3jThu+ht
+encrypt me please!
 
+Process finished with exit code 0
+
+```
