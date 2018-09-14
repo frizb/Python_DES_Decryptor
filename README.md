@@ -64,7 +64,8 @@ Process finished with exit code 0
 
 # DESCrypto.py Help Info Output
 ```
-C:\Python27\python.exe C:/Users/Null/PycharmProjects/BatchPatch/DESCrypto.py -h
+$ DESCrypto.py -h
+
 DESCrypto - C# .NET Decryptor - V1 - Last Updated: September 15th, 2018
 usage: DESCrypto.py [-h] [-decode DECODE] [-encode ENCODE] [-key KEY] [-iv IV]
 
