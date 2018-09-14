@@ -5,29 +5,38 @@ This came up in an engagement where a C# application contained a hard-coded key 
 
 ## Typical C# Code for Storing DES Encryption
 
-```
+```CSharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace DESCrypto
 {
-    class Hello 
+    class DESCrypto
     {
-        static void Main() 
+        static void Main()
         {
-            String key = "s3cret12";
-            String iv = "vector12";
+            byte[] key = Encoding.ASCII.GetBytes("s3cret12");
+            byte[] iv = Encoding.ASCII.GetBytes("vector12");
             String plaintext = "encrypt me please!";
             DESCryptoServiceProvider dESCryptoServiceProvider = new DESCryptoServiceProvider();
             MemoryStream memoryStream = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(memoryStream, dESCryptoServiceProvider.CreateEncryptor(key, iv), CryptoStreamMode.Write);
             StreamWriter streamWriter = new StreamWriter(cryptoStream);
-            streamWriter.Write(originalString);
+            streamWriter.Write(plaintext);
             streamWriter.Flush();
             cryptoStream.FlushFinalBlock();
             streamWriter.Flush();
-            Console.WriteLine(" Convert.ToBase64String(memoryStream.GetBuffer(), 0, (int)memoryStream.Length);
+            Console.WriteLine(Convert.ToBase64String(memoryStream.GetBuffer(), 0, (int)memoryStream.Length));
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }
 }
+
 
 ```
